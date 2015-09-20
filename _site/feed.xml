@@ -6,13 +6,13 @@
 </description>
     <link>http://wangzhaohui.github.io/</link>
     <atom:link href="http://wangzhaohui.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 20 Sep 2015 02:41:06 +0800</pubDate>
-    <lastBuildDate>Sun, 20 Sep 2015 02:41:06 +0800</lastBuildDate>
+    <pubDate>Sun, 20 Sep 2015 14:23:39 +0800</pubDate>
+    <lastBuildDate>Sun, 20 Sep 2015 14:23:39 +0800</lastBuildDate>
     <generator>Jekyll v3.0.0.pre.beta8</generator>
     
       <item>
         <title>My second post</title>
-        <description>&lt;p&gt;Now this is my second post far from my first one. Nothing to say, but till now I know that the jeklly has its new version. I update it to the latest version on my Macbook. I got a problem when I ran command of ‘jekyll server –watch’, no server was started. I searched the problem on google and I find it that in the latest version of Jekyll, ‘jekyll server’ will be started with the ‘watch’ mode. And if no server is started, we may try to use a option ‘–force_polling’.&lt;/p&gt;
+        <description>&lt;p&gt;Now this is my second post far from my first one. Nothing to say, but till now I know that the jeklly has its new version. I update it to the latest version on my Macbook. I got a problem when I ran command of ‘jekyll server –watch’, no server was started. I searched the problem on google and I find it that in the latest version of Jekyll, &lt;code&gt;&#39;jekyll server&#39;&lt;/code&gt; will be started with the ‘watch’ mode defaultly. And if no server is started, we may try to use a option &lt;code&gt;&#39;--force_polling&#39;&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 21 Sep 2015 05:12:05 +0800</pubDate>
         <link>http://wangzhaohui.github.io/jekyll/update/2015/09/21/my-second-post.html</link>
