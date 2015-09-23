@@ -220,11 +220,13 @@
         function checkToLoad(selector){
             var viewportHeight = $(window).height();
             var scrollTop = $(window).scrollTop();
-            var eToTop = 0;
+            var eToTop = 0, eHeight;
 
             $container.find(selector).each(function(){
                 eToTop = $(this).position().top;
-                if (eToTop < viewportHeight + scrollTop) {
+                eHeight = $(this).height();
+                if ((eToTop < viewportHeight + scrollTop) &&
+                    (eToTop + eHeight > scrollTop)) {
                     if ($(this).attr('origin-src')) {
                         load1($(this));
                     } else {
