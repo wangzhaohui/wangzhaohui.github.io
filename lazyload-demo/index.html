@@ -17,11 +17,31 @@
             margin: 0 auto;
             padding: 10px;
         }
+        #container .code-section{
+            width: 80%;
+            background-color: rgba(255,255,255,0.8);
+            padding: 10px 2px;
+            position: relative;
+            left: 50%;
+            margin-left: -40%;
+            z-index: 1000;
+        }
+        #container .code-section .section{
+            display: inline-block;
+            width: 49%;
+        }
         #container .lazyload{
             width: 500px;
             height: 300px;
-            background: #ccc;
+            background-color: #ccc;
             margin: 0 auto;
+            display: inline-block;
+        }
+        #container img{
+            width: 500px;
+            height: 300px;
+            background-color: #ccc;
+            display: inline-block;
         }
         #container .title{
             border-top: 20px solid #333;
@@ -32,6 +52,29 @@
             display: inline-block;
             height: 500px;
         }
+        #container .lazyload-video{
+            position: relative;
+            background-color: #000;
+            cursor: pointer;
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        #container .lazyload-video:hover .play{
+            background-image: url(images/play-hover.png);
+        }
+        #container .lazyload-video .play{
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            top: 125.5px;
+            left: 248px;
+            background-image: url(images/play.png);
+        }
+        #container .video iframe{
+            width: 500px;
+            height: 300px;
+        }
         </style>
     </head>
     <body>
@@ -39,89 +82,179 @@
             <img src="images/happybirthday.png">
         </div>
         <div id="container">
+            <div class="code-section">
+                <div class="section">  
+                  <h3>HTML</h3>
+                  <pre class="brush: html">
+                      &lt;img src=&quot;images/grey.png&quot; origin-src=&quot;images/6.png&quot; /&gt;
+                  </pre>
+                  <h3>JavaScript</h3>
+                  <pre class="brush: js">
+                    $(document).on('scroll', function(){
+                        // 检查该节点(们)，符合条件则显示
+                        checkToLoad('[origin-src]');
+                    });
+                  </pre>
+                </div>
+                <div class="section">  
+                  <h3>HTML</h3>
+                  <pre class="brush: html">
+                    &lt;div class=&quot;lazyload&quot; &gt;
+                      &lt;!--
+                      &lt;img src=&quot;images/1.png&quot; /&gt;
+                      --&gt;
+                    &lt;/div&gt;
+                  </pre>
+                  <h3>JavaScript</h3>
+                  <pre class="brush: js">
+                    $(document).on('scroll', function(){
+                        // 检查该节点(们)，符合条件则显示
+                        checkToLoad('.lazyload');
+                    });
+                  </pre>
+                </div>
+            </div>
             <h1 class='title'>图片延迟加载</h1>
             <div class="words"></div>
+            <img src="images/grey.png" origin-src="images/6.png" />
             <div class="lazyload">
                 <!-- <img src="images/1.png"> -->
             </div>
             <div class="words"></div>
+            <img src="images/grey.png" origin-src="images/6.png" />
             <div class="lazyload">
                 <!-- <img src="images/2.png"> -->
             </div>
             <div class="words"></div>
+            <img src="images/grey.png" origin-src="images/6.png" />
             <div class="lazyload">
                 <!-- <img src="images/3.png"> -->
             </div>
             <div class="words"></div>
+            <img src="images/grey.png" origin-src="images/6.png" />
             <div class="lazyload">
                 <!-- <img src="images/4.png"> -->
             </div>
             <div class="words"></div>
+            <img src="images/grey.png" origin-src="images/6.png" />
             <div class="lazyload">
                 <!-- <img src="images/5.png"> -->
             </div>
             <h1 class="title">视频延迟加载</h1>
             <div class="words"></div>
-            <div class="lazyload">
-                
+            <div class="lazyload-video" >
+              <div class="lazyload" >
+              <!--
+              <img src="images/video.png" width="500" height="300" />
+              <span class="play"></span>
+              -->
+              </div>
+              <!--
+              <div class="video">
+                <iframe width="500" height="300" src="http://player.video.qiyi.com/edf3561ca646fc9b079076a85daee531/0/108/v_19rrobl5so.swf-albumId=400403700-tvId=400403700-isPurchase=0-cnId=10" frameborder="0" allowfullscreen></iframe>
+              </div>
+              -->
             </div>
             <h1 class="title">iframe延迟加载</h1>
             <div class="words"></div>
             <div class="lazyload">
-                <!-- <iframe src="http://www.iqiyi.com/"></iframe> -->
-            </div>
-            <div class="words"></div>
-            <div class="lazyload">
-                <!-- <iframe src="https://www.baidu.com"></iframe> -->
+                <!-- <iframe src="http://www.baidu.com/"></iframe> -->
             </div>
         </div>
     </body>
+    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet">
+    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet">
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script>
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script>
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
     <script type="text/javascript">
         var $container = $('#container');
 
         (function(){
             init();
+            addCodeToSection();
             setLazyload();
         })();
 
         function init(){
             var str = '<p>刘德华（Andy Lau），1961年9月出生于香港，演员、歌手、词作人、制片人、电影人，影视歌多栖发展的代表艺人之一。</p>';
             $container.find('.words').html(str+str+str+str+str+str+str+str+str+str);
+            SyntaxHighlighter.all();
         }
+
+        function addCodeToSection(){
+            var $codeSection = $container.find('.code-section');
+
+            $(document).on('scroll', function(){
+                if ($codeSection.offset().top - $(window).scrollTop() <= 0) {
+                    $codeSection.css({'position': 'fixed',
+                                        'top': '0'});
+                }
+                if ($container.offset().top - $(window).scrollTop() >= 0) {
+                    $codeSection.css({'position': 'relative'});
+                    $codeSection.before($container.children().first());
+                }
+            });
+        }
+
         function setLazyload(){
+            // for lazyload 1
             $(document).on('load', function(){
-                watch();
+                checkToLoad('.lazyload');
             });
 
             $(document).on('scroll', function(){
-                watch();
+                checkToLoad('.lazyload');
             });
 
-            function watch(){
-                var viewportHeight = $(window).height();
-                var scrollTop = $(window).scrollTop();
-                var eToTop = 0;
+            $(document).on('click', '.lazyload-video', function(){
+                checkToLoad('.lazyload-video');
+            });
 
-                $container.find('.lazyload').each(function(){
-                    eToTop = $(this).position().top;
-                    if (eToTop < viewportHeight + scrollTop) {
-                        load($(this));
+            // for lazyload 2
+            $(document).on('scroll', function(){
+                checkToLoad('[origin-src]');
+            });
+        }
+
+        function checkToLoad(selector){
+            var viewportHeight = $(window).height();
+            var scrollTop = $(window).scrollTop();
+            var eToTop = 0;
+
+            $container.find(selector).each(function(){
+                eToTop = $(this).position().top;
+                if (eToTop < viewportHeight + scrollTop) {
+                    if ($(this).attr('origin-src')) {
+                        load1($(this));
+                    } else {
+                        load2($(this));
                     }
-                });
-            }
+                }
+            });
+        }
 
-            function load($ele){
-                var comment = $ele.contents().filter(function() {
-                  return this.nodeType === 8;
-                }).get(0);
+        function load1($ele){
+            if ($ele.attr('src') == $ele.attr('origin-src')) { return; }
 
-                var newElement = $(comment && $.trim(comment.data));
-                $ele.replaceWith(newElement);
+            $ele.attr('src', $ele.attr('origin-src'));
 
-                newElement.fadeOut(0, function(){
-                    $(this).fadeIn(10000);
-                });
-            }
+            $ele.fadeOut(0, function(){
+                $(this).fadeIn(1000);
+            });
+        }
+
+        function load2($ele){
+            var comment = $ele.contents().filter(function() {
+              return this.nodeType === 8;
+            }).get(0);
+
+            var newElement = $(comment && $.trim(comment.data));
+            $ele.replaceWith(newElement);
+
+            newElement.fadeOut(0, function(){
+                $(this).fadeIn(1000);
+            });
         }
     </script>
 </html>
