@@ -2,8 +2,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <script type="text/javascript" src='js/jquery-1.11.3.min.js'></script>
-        <script type="text/javascript" src='js/jquery.lazyload-any.js'></script>
         <style type="text/css">
         body{
             background: #699f00;
@@ -25,10 +23,15 @@
             left: 50%;
             margin-left: -40%;
             z-index: 1000;
+            transition: width 1s;
         }
         #container .code-section .section{
             display: inline-block;
             width: 49%;
+        }
+        #container .code-section h5{
+            padding: 0;
+            margin: 0;
         }
         #container .lazyload{
             width: 500px;
@@ -83,12 +86,13 @@
         </div>
         <div id="container">
             <div class="code-section">
-                <div class="section">  
-                  <h3>HTML</h3>
+                <div class="section">
+                  <h5>基于src替换的延迟加载</h5>  
+                  <h5>HTML</h5>
                   <pre class="brush: html">
                       &lt;img src=&quot;images/grey.png&quot; origin-src=&quot;images/6.png&quot; /&gt;
                   </pre>
-                  <h3>JavaScript</h3>
+                  <h5>JavaScript</h5>
                   <pre class="brush: js">
                     $(document).on('scroll', function(){
                         // 检查该节点(们)，符合条件则显示
@@ -97,15 +101,14 @@
                   </pre>
                 </div>
                 <div class="section">  
-                  <h3>HTML</h3>
+                  <h5>基于取消注释的加载</h5>
+                  <h5>HTML</h5>
                   <pre class="brush: html">
                     &lt;div class=&quot;lazyload&quot; &gt;
-                      &lt;!--
-                      &lt;img src=&quot;images/1.png&quot; /&gt;
-                      --&gt;
+                      &lt;!--&lt;img src=&quot;images/1.png&quot; /&gt;--&gt;
                     &lt;/div&gt;
                   </pre>
-                  <h3>JavaScript</h3>
+                  <h5>JavaScript</h5>
                   <pre class="brush: js">
                     $(document).on('scroll', function(){
                         // 检查该节点(们)，符合条件则显示
@@ -121,22 +124,22 @@
                 <!-- <img src="images/1.png"> -->
             </div>
             <div class="words"></div>
-            <img src="images/grey.png" origin-src="images/6.png" />
+            <img src="images/grey.png" origin-src="images/7.png" />
             <div class="lazyload">
                 <!-- <img src="images/2.png"> -->
             </div>
             <div class="words"></div>
-            <img src="images/grey.png" origin-src="images/6.png" />
+            <img src="images/grey.png" origin-src="images/8.png" />
             <div class="lazyload">
                 <!-- <img src="images/3.png"> -->
             </div>
             <div class="words"></div>
-            <img src="images/grey.png" origin-src="images/6.png" />
+            <img src="images/grey.png" origin-src="images/9.png" />
             <div class="lazyload">
                 <!-- <img src="images/4.png"> -->
             </div>
             <div class="words"></div>
-            <img src="images/grey.png" origin-src="images/6.png" />
+            <img src="images/grey.png" origin-src="images/10.png" />
             <div class="lazyload">
                 <!-- <img src="images/5.png"> -->
             </div>
@@ -162,11 +165,13 @@
             </div>
         </div>
     </body>
-    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet">
-    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet">
-    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script>
-    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script>
-    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
+    <link href="css/shCore.css" rel="stylesheet">
+    <link href="css/shThemeDefault.css" rel="stylesheet">
+    <script type="text/javascript" src='js/jquery-1.11.3.min.js'></script>
+    <script type="text/javascript" src='js/jquery.lazyload-any.js'></script>
+    <script src="js/shCore.js"></script>
+    <script src="js/shBrushJScript.js"></script>
+    <script src="js/shBrushXml.js"></script>
     <script type="text/javascript">
         var $container = $('#container');
 
@@ -188,10 +193,16 @@
             $(document).on('scroll', function(){
                 if ($codeSection.offset().top - $(window).scrollTop() <= 0) {
                     $codeSection.css({'position': 'fixed',
-                                        'top': '0'});
+                                        'top': '0',
+                                        'width': '100%',
+                                        'left': '0',
+                                        'margin-left': '0'});
                 }
                 if ($container.offset().top - $(window).scrollTop() >= 0) {
-                    $codeSection.css({'position': 'relative'});
+                    $codeSection.css({'position': 'relative',
+                                        'width': '80%',
+                                        'left': '50%',
+                                        'margin-left': '-40%'});
                     $codeSection.before($container.children().first());
                 }
             });
@@ -199,6 +210,11 @@
 
         function setLazyload(){
             // for lazyload 1
+            $(document).on('scroll', function(){
+                checkToLoad('[origin-src]');
+            });
+
+            // for lazyload 2
             $(document).on('load', function(){
                 checkToLoad('.lazyload');
             });
@@ -210,20 +226,16 @@
             $(document).on('click', '.lazyload-video', function(){
                 checkToLoad('.lazyload-video');
             });
-
-            // for lazyload 2
-            $(document).on('scroll', function(){
-                checkToLoad('[origin-src]');
-            });
         }
 
         function checkToLoad(selector){
-            var viewportHeight = $(window).height();
-            var scrollTop = $(window).scrollTop();
-            var eToTop = 0, eHeight;
+            var viewportHeight = $(window).height(),
+                scrollTop = $(window).scrollTop(),
+                eToTop = 0,
+                eHeight = 0;
 
             $container.find(selector).each(function(){
-                eToTop = $(this).position().top;
+                eToTop = $(this).offset().top;
                 eHeight = $(this).height();
                 if ((eToTop < viewportHeight + scrollTop) &&
                     (eToTop + eHeight > scrollTop)) {
@@ -242,7 +254,7 @@
             $ele.attr('src', $ele.attr('origin-src'));
 
             $ele.fadeOut(0, function(){
-                $(this).fadeIn(1000);
+                $(this).fadeIn(10000);
             });
         }
 
@@ -255,7 +267,7 @@
             $ele.replaceWith(newElement);
 
             newElement.fadeOut(0, function(){
-                $(this).fadeIn(1000);
+                $(this).fadeIn(10000);
             });
         }
     </script>

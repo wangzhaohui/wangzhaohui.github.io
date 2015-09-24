@@ -6,17 +6,17 @@
 </description>
     <link>http://wangzhaohui.github.io/</link>
     <atom:link href="http://wangzhaohui.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 22 Sep 2015 02:20:20 +0800</pubDate>
-    <lastBuildDate>Tue, 22 Sep 2015 02:20:20 +0800</lastBuildDate>
+    <pubDate>Thu, 24 Sep 2015 15:09:30 +0800</pubDate>
+    <lastBuildDate>Thu, 24 Sep 2015 15:09:30 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>My second post</title>
-        <description>&lt;p&gt;Now this is my second post far from my first one. Nothing to say, but till now I know that the jeklly has its new version. I update it to the latest version on my Macbook. I got a problem when I ran command of ‘jekyll server –watch’, no server was started. I searched the problem on google and I find it that in the latest version of Jekyll, &lt;code&gt;&#39;jekyll server&#39;&lt;/code&gt; will be started with the ‘watch’ mode defaultly. And if no server is started, we may try to use a option &lt;code&gt;&#39;--force_polling&#39;&lt;/code&gt;.&lt;/p&gt;
+        <title>Lazyload Demo</title>
+        <description>&lt;p&gt;click &lt;a href=&quot;/lazyload-demo&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 21 Sep 2015 05:12:05 +0800</pubDate>
-        <link>http://wangzhaohui.github.io/jekyll/update/2015/09/21/my-second-post.html</link>
-        <guid isPermaLink="true">http://wangzhaohui.github.io/jekyll/update/2015/09/21/my-second-post.html</guid>
+        <pubDate>Tue, 22 Sep 2015 10:24:05 +0800</pubDate>
+        <link>http://wangzhaohui.github.io/jekyll/update/2015/09/22/lazyload-demo.html</link>
+        <guid isPermaLink="true">http://wangzhaohui.github.io/jekyll/update/2015/09/22/lazyload-demo.html</guid>
         
         
         <category>jekyll</category>
@@ -27,11 +27,11 @@
     
       <item>
         <title>My second post</title>
-        <description>&lt;p&gt;click &lt;a href=&quot;/lazyload-demo/index.html&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;Now this is my second post far from my first one. Nothing to say, but till now I know that the jeklly has its new version. I update it to the latest version on my Macbook. I got a problem when I ran command of ‘jekyll server –watch’, no server was started. I searched the problem on google and I find it that in the latest version of Jekyll, &lt;code&gt;&#39;jekyll server&#39;&lt;/code&gt; will be started with the ‘watch’ mode defaultly. And if no server is started, we may try to use a option &lt;code&gt;&#39;--force_polling&#39;&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 21 Sep 2015 05:12:05 +0800</pubDate>
-        <link>http://wangzhaohui.github.io/jekyll/update/2015/09/21/lazyload-demo.html</link>
-        <guid isPermaLink="true">http://wangzhaohui.github.io/jekyll/update/2015/09/21/lazyload-demo.html</guid>
+        <link>http://wangzhaohui.github.io/jekyll/update/2015/09/21/my-second-post.html</link>
+        <guid isPermaLink="true">http://wangzhaohui.github.io/jekyll/update/2015/09/21/my-second-post.html</guid>
         
         
         <category>jekyll</category>
