@@ -1,0 +1,12 @@
+.main-title{
+	color: #fff;
+	background-color: #000;
+	font-size: 5em;
+	text-align: center;
+	position: relative;
+}
+.main-title i{
+	color: #CC00FF;
+	font-size: 2em;
+	position: absolute;
+}
