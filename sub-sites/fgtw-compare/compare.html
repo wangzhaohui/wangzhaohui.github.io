@@ -97,8 +97,8 @@
 		for (var i = 0, len = arr.length; i < len; i++) {
 			arrTemp.push('- ' + arr[i][0]);
 			arrTemp.push(": ");
-			arrTemp.push("(新)" + arr[i][1]);
-			arrTemp.push("(旧)" + arr[i][2]);
+			arrTemp.push("【新】" + arr[i][1]);
+			arrTemp.push("【旧】" + arr[i][2]);
 			arrTemp.push("\n");
 		}
 		addtionalStr += arrTemp.join("");
@@ -144,7 +144,8 @@
 	}
 
 	function convert(v, i) {
-		return v.split('=');
+		var i = v.indexOf('=');
+		return [v.substring(0, i), v.substring(i + 1)];
 	}
 
 </script>
