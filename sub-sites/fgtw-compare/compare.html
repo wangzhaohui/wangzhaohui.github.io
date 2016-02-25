@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>分甘数据比较程序</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	.box{
+		display: inline-block;
+	}
+	.box h1{
+		text-align: center;
+	}
+	.box textarea{
+		width: 400px;
+		height: 800px;
+	}
+	</style>
+</head>
+<body>
+<div class="box new">
+	<h1>新</h1>
+	<textarea></textarea>
+</div>
+<div class="box compare">
+	<h1><a class="j-compare" href="javascript:void(0)">对比</a>结果</h1>
+	<textarea readonly="true"></textarea>
+</div>
+<div class="box old">
+	<h1>旧</h1>
+	<textarea></textarea>
+</div>
+
+<script type="text/javascript">
+	var q = function(sl) {
+		return document.querySelectorAll(sl);
+	}
+
+	// Main program
+	var newContent = '',
+		oldContent = '',
+		newArr = [],
+		oldArr = [],
+		newTa = q('.new textarea')[0],
+		compareTa = q('.compare textarea')[0],
+		oldTa = q('.old textarea')[0];
+
+	q('.j-compare')[0].onclick = function() {
+		compareTa.value = "";
+		newContent = decodeURIComponent(newTa.value);
+		oldContent = decodeURIComponent(oldTa.value);
+		newTa.value = newContent;
+		oldTa.value = oldContent;
+
+		if (newContent === "") {
+			compareTa.value = "新为空！";
+			return;
+		} else if (oldContent === "") {
+			compareTa.value = "旧为空！";
+			return;
+		}
+
+		newArr = newContent.split('&');
+		oldArr = oldContent.split('&');
+
+		var differences = getArrDiff(newArr, oldArr);
+
+		showCompare(differences);
+	};
+
+	function showCompare(differences) {
+		var newSpecial = "***新分甘同味中有，旧中没有：\n\n",
+			oldSpecial = "***旧分甘同味中有，新中没有：\n\n",
+			diffValue = "***新旧分甘同味同字段不同值：\n\n";
+
+		compareTa.value = joinArrToCommonString(differences[0], newSpecial)
+			+ joinArrToCommonString(differences[1], oldSpecial)
+			+ joinArrToSpcailString(differences[2], diffValue);
+	}
+
+	function joinArrToCommonString(arr, addtionalStr) {
+		var arrTemp = [];
+
+		for (var i = 0, len = arr.length; i < len; i++) {
+			arrTemp.push('- ' + arr[i][0]);
+			arrTemp.push(": ");
+			arrTemp.push(arr[i][1]);
+			arrTemp.push("\n");
+		}
+		addtionalStr += arrTemp.join("");
+
+		return addtionalStr + "\n";
+	}
+
+	function joinArrToSpcailString(arr, addtionalStr) {
+		var arrTemp = [];
+		
+		for (var i = 0, len = arr.length; i < len; i++) {
+			arrTemp.push('- ' + arr[i][0]);
+			arrTemp.push(": ");
+			arrTemp.push("(新)" + arr[i][1]);
+			arrTemp.push("(旧)" + arr[i][2]);
+			arrTemp.push("\n");
+		}
+		addtionalStr += arrTemp.join("");
+
+		return addtionalStr + "\n";
+	}
+
+	// Method: get differences between arr1 and arr2
+	function getArrDiff(arr1, arr2) {
+		var diffs1 = [],
+			diffs2 = [],
+			diffs = [];
+
+		var arrArr1 = arr1.map(convert),
+			arrArr2 = arr2.map(convert);
+
+		for (var i = 0, len1 = arrArr1.length; i < len1; i++) {
+			var item1 = arrArr1[i];
+
+			for (var j = 0, len2 = arrArr2.length; j < len2; j++) {
+				var item2 = arrArr2[j];
+				if (item2[2] !== 'flag' && item1[0] === item2[0]) {
+					if (item1[1] !== item2[1]) {
+						diffs.push([item1[0], item1[1], item2[1]]);
+					}
+					item2.push('flag'); // Flag
+					break;
+				}
+			}
+			if (j === len2) {
+				diffs1.push(item1);
+			}
+		}
+
+		for (j = 0, len2 = arrArr2.length; j < len2; j++) {
+			var item2 = arrArr2[j];
+			if (item2[2] !== 'flag') {
+				diffs2.push(item2);
+			}
+		}
+
+		return [diffs1, diffs2, diffs];
+	}
+
+	function convert(v, i) {
+		return v.split('=');
+	}
+
+</script>
+</body>
+</html>
