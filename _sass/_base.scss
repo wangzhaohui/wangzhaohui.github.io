@@ -8,7 +8,12 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
+/**
+ * Html styling
+ */
+html {
+    background-color: $theme-color-dark;
+}
 
 /**
  * Basic styling
@@ -18,8 +23,8 @@ body {
     font-size: $base-font-size;
     line-height: $base-line-height;
     font-weight: 300;
-    color: $text-color;
-    background-color: $background-color;
+    color: $theme-text-color;
+    background-color: $theme-background-color;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -89,16 +94,15 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
     text-decoration: none;
 
+    &,
     &:visited {
-        color: darken($brand-color, 15%);
+        color: darken($theme-color, 15%);
     }
 
     &:hover {
-        color: $text-color;
-        text-decoration: underline;
+        color: $theme-brand-color;
     }
 }
 
@@ -108,8 +112,8 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
+    color: $theme-color;
+    border-left: 4px solid $theme-color-light;
     padding-left: $spacing-unit / 2;
     font-size: 18px;
     letter-spacing: -1px;
@@ -128,7 +132,7 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
+    border: 1px solid $theme-color-light;
     border-radius: 3px;
     background-color: #eef;
 }
@@ -198,7 +202,7 @@ pre {
         vertical-align: middle;
 
         path {
-            fill: $grey-color;
+            fill: $theme-color;
         }
     }
 }
