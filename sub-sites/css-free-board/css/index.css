@@ -1,0 +1,16 @@
+body {
+	border: 10px solid #854B47;
+	border-bottom: 0;
+	padding: 10px;
+}
+
+body > div {
+	padding: 10px;
+	display: inline-block;
+	transition: 0.5s;
+	position: relative;
+}
+
+body > div:hover {
+	box-shadow: 0 0 2px 2px #ccc;
+}
