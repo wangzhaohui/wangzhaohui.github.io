@@ -3,10 +3,11 @@
 }
 
 .iqiyi-logo .outline {
-	width: 100px;
+	width: 110px;
 	height: 85px;
 	border: 10px solid #699f00;
 	border-radius: 50% / 10%;
+	float: left;
 }
 .iqiyi-logo .outline {
 	position: relative;
@@ -35,7 +36,7 @@
 
 .iqiyi-logo .outline .letter-q {
 	position: absolute;
-	left: 10px;
+	left: 12px;
 	top: 13px;
 }
 .iqiyi-logo .outline .letter-q .circle {
@@ -43,7 +44,7 @@
 	border-style: solid;
 	border-color: #699f00;
 	height: 50px;
-	width: 5px;
+	width: 8px;
 	border-radius: 50% / 15%;
 }
 .iqiyi-logo .outline .letter-q .tail {
@@ -58,7 +59,7 @@
 
 .iqiyi-logo .outline .letter-middle-i {
 	position: absolute;
-	left: 45px;
+	left: 53px;
 	top: 15px;
 	width: 10px;
 	height: 55px;
@@ -67,7 +68,7 @@
 
 .iqiyi-logo .outline .letter-y {
 	position: absolute;
-	left: 68px;
+	left: 78px;
 	top: 15px;
 }
 .iqiyi-logo .outline .letter-y .line {
@@ -94,9 +95,31 @@
 	right: -10px;
 	top: 10px;
 }
-.iqiyi-logo .outline .letter-right-i .first.mask-line{
+.iqiyi-logo .outline .letter-right-i .first.mask-line {
 	top: 0;
 }
-.iqiyi-logo .outline .letter-right-i .second.mask-line{
+.iqiyi-logo .outline .letter-right-i .second.mask-line {
 	top: 54px;
+}
+
+/* 爱奇艺 */
+.iqiyi-logo .name {
+	color: #699f00;
+	font-size: 50px;
+	font-family: 'microsoft yahei';
+	float: left;
+	position: relative;
+	left: 20px;
+	top: 20px;
+}
+.iqiyi-logo .name .text {
+	margin: -5px;
+	transition: color 0.5s;
+}
+.iqiyi-logo:hover .name .text{
+	color: transparent;
+}
+@keyframe show-text {
+	from: 0;
+	to: 100;
 }
