@@ -12,7 +12,7 @@ dl, dd, ol, ul, figure {
  * Html styling
  */
 html {
-    background-color: $theme-color-dark;
+    // background-color: white;
 }
 
 /**
@@ -98,7 +98,7 @@ a {
 
     &,
     &:visited {
-        color: darken($theme-color, 15%);
+        color: $theme-text-color;
     }
 
     &:hover {
@@ -112,8 +112,8 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: $theme-color;
-    border-left: 4px solid $theme-color-light;
+    color: $theme-text-color;
+    border-left: 4px solid $theme-brand-color;
     padding-left: $spacing-unit / 2;
     font-size: 18px;
     letter-spacing: -1px;
@@ -132,7 +132,7 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $theme-color-light;
+    border: 1px solid $theme-brand-color;
     border-radius: 3px;
     background-color: #eef;
 }
@@ -202,7 +202,7 @@ pre {
         vertical-align: middle;
 
         path {
-            fill: $theme-color;
+            fill: $theme-brand-color;
         }
     }
 }

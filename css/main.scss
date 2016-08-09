@@ -14,12 +14,13 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 /* Defined theme color start */
-$theme-color: #9C27B0;
-$theme-color-light: lighten($theme-color, 40%);
-$theme-color-dark:  darken($theme-color, 25%);
 $theme-text-color: #111;
 $theme-background-color: #fdfdfd;
 $theme-brand-color:      #673AB7;
+$theme-brand-color-light: lighten($theme-brand-color, 20%);
+$theme-brand-color-xlight: lighten($theme-brand-color, 30%);
+$theme-brand-color-xxlight: lighten($theme-brand-color, 50%);
+$theme-white-color: #fff;
 /* Defined theme color end */
 
 $on-palm:          600px;
@@ -44,6 +45,8 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "MIXIN",
+        "UTIL",
         "base",
         "layout",
         "syntax-highlighting"

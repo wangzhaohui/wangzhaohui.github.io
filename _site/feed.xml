@@ -6,9 +6,26 @@
 </description>
     <link>http://wangzhaohui.github.io/</link>
     <atom:link href="http://wangzhaohui.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 01 Apr 2016 19:43:31 +0800</pubDate>
-    <lastBuildDate>Fri, 01 Apr 2016 19:43:31 +0800</lastBuildDate>
+    <pubDate>Tue, 09 Aug 2016 21:41:32 +0800</pubDate>
+    <lastBuildDate>Tue, 09 Aug 2016 21:41:32 +0800</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>更新站点</title>
+        <description>&lt;p&gt;【2016-08-09】
+距离上次更新快接近一年了，这次在工作闲暇之余把站点的界面做了部分更新，在站点库里（cdn）添加了&lt;a href=&quot;http://materializecss.com/&quot;&gt;Materializecss&lt;/a&gt;和&lt;a href=&quot;https://jquery.com&quot;&gt;jQuery&lt;/a&gt;，以后还会陆续增加其他常用库和插件，主要是要用在子站点。对于主站主要使用到jQuery和Wave(过后增加)。
+现在子站点准备陆续开放，为了方便的达人们的阅读和交流，开始使用中文简体来写post。对于以后主站点的更新，全部记录在本post里，以头部的日期标记。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Aug 2016 05:20:00 +0800</pubDate>
+        <link>http://wangzhaohui.github.io/jekyll/update/2016/08/09/update-site.html</link>
+        <guid isPermaLink="true">http://wangzhaohui.github.io/jekyll/update/2016/08/09/update-site.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>Lazyload Demo</title>

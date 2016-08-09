@@ -12,9 +12,6 @@ dl, dd, ol, ul, figure {
 /**
  * Html styling
  */
-html {
-  background-color: #3f1048; }
-
 /**
  * Basic styling
  */
@@ -74,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none; }
   a, a:visited {
-    color: #641971; }
+    color: #111; }
   a:hover {
     color: #673AB7; }
 
@@ -82,8 +79,8 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: #9C27B0;
-  border-left: 4px solid #e6b5ee;
+  color: #111;
+  border-left: 4px solid #673AB7;
   padding-left: 15px;
   font-size: 18px;
   letter-spacing: -1px;
@@ -97,7 +94,7 @@ blockquote {
 pre,
 code {
   font-size: 15px;
-  border: 1px solid #e6b5ee;
+  border: 1px solid #673AB7;
   border-radius: 3px;
   background-color: #eef; }
 
@@ -146,15 +143,21 @@ pre {
   height: 16px;
   vertical-align: middle; }
   .icon > svg path {
-    fill: #9C27B0; }
+    fill: #673AB7; }
 
 /**
  * Site header
  */
 .site-header {
-  background-color: #3f1048;
-  min-height: 56px;
-  position: relative; }
+  min-height: 100px;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 2px !important;
+  border: 0px !important;
+  background-color: #9f80d7 !important;
+  color: #111 !important;
+  border-top: 5px solid #673AB7 !important;
+  border-image: linear-gradient(90deg, red 0%, yellow 33%, green 66%, blue 99%) 10 !important; }
 
 .site-title {
   font-size: 26px;
@@ -163,7 +166,7 @@ pre {
   margin-bottom: 0;
   float: left; }
   .site-title, .site-title:visited {
-    color: #e6b5ee; }
+    color: #fff; }
 
 .site-nav {
   float: right;
@@ -171,8 +174,10 @@ pre {
   .site-nav .menu-icon {
     display: none; }
   .site-nav .page-link {
-    color: #111;
+    color: #fff;
     line-height: 1.5; }
+    .site-nav .page-link:hover {
+      text-decoration: underline; }
     .site-nav .page-link:not(:first-child) {
       margin-left: 20px; }
   @media screen and (max-width: 600px) {
@@ -181,7 +186,7 @@ pre {
       top: 9px;
       right: 30px;
       background-color: #fdfdfd;
-      border: 1px solid #e6b5ee;
+      border: 1px solid #673AB7;
       border-radius: 5px;
       text-align: right; }
       .site-nav .menu-icon {
@@ -196,7 +201,7 @@ pre {
           width: 18px;
           height: 15px; }
           .site-nav .menu-icon > svg path {
-            fill: #3f1048; }
+            fill: #673AB7; }
       .site-nav .trigger {
         clear: both;
         display: none; }
@@ -211,11 +216,11 @@ pre {
  * Site footer
  */
 .site-footer {
-  background-color: #3f1048;
+  background-color: #f7f4fc;
   padding: 30px 0; }
 
 .footer-heading {
-  color: #e6b5ee;
+  color: #111;
   font-size: 18px;
   margin-bottom: 15px; }
 
@@ -226,7 +231,7 @@ pre {
 
 .footer-col-wrapper {
   font-size: 15px;
-  color: #9C27B0;
+  color: #111;
   margin-left: -15px; }
 
 .footer-col {
@@ -277,7 +282,7 @@ pre {
 
 .post-meta {
   font-size: 14px;
-  color: #9C27B0; }
+  color: #111; }
 
 .post-link {
   display: block;
