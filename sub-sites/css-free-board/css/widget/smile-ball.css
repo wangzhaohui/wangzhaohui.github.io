@@ -1,0 +1,53 @@
+.smile-face {
+	position: relative;
+	margin-left: 50px;
+}
+
+.smile-face .head {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: #F3D6A2;
+	border-radius: 50%;
+	bottom: 0;
+	z-index: 10;
+}
+
+.smile-face:hover .head {
+	animation: jump 1s ease-in-out infinite;
+}
+@keyframes jump {
+	0% {bottom: 0; height: 100px;}
+	12.5% {bottom: 10px; height: 110px;}
+	25% {bottom: 15px; height: 120px;}
+	37.5% {bottom: 10px; height: 110px;}
+	50% {bottom: 0px; height: 100px;}
+	62.5% {bottom: 0px; height: 90px;}
+	75% {bottom: 0px; height: 80px;}
+	87.5% {bottom: 0px; height: 90px;}
+	100% {bottom: 0px; height: 100px;}
+}
+
+.smile-face .shadow {
+	position: absolute;
+	width: 100px;
+	height: 10px;
+	background-color: #ccc;
+	bottom: -5px;
+	border-radius: 50%;
+}
+
+.smile-face:hover .shadow {
+	animation: scale 1s ease-in-out infinite;
+}
+@keyframes scale {
+	0% {width: 100px;}
+	12.5% {width: 90px;}
+	25% {width: 80px;}
+	37.5% {width: 90px;}
+	50% {width: 100px;}
+	62.5% {width: 110px;}
+	75% {width: 120px;}
+	87.5% {width: 110px;}
+	100% {width: 100px;}
+}
