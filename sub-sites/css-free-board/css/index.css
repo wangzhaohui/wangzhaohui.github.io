@@ -12,6 +12,9 @@ body > div {
 }
 
 body > div:hover {
-	/*box-shadow: 0 0 2px 2px #ccc;*/
 	cursor: pointer;
+}
+
+.stuff-box {
+	display: inline-block;
 }

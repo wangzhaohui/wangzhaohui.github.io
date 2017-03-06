@@ -1,7 +1,7 @@
 /* 主页js */
 
 var obj = {
-    shit: [
+    stuffs: [
         {url: 'snippets/stuffs/iqiyi-logo.html'},
         {url: 'snippets/stuffs/smile-face.html'}
     ]

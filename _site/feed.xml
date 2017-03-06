@@ -6,26 +6,9 @@
 </description>
     <link>http://wangzhaohui.github.io/</link>
     <atom:link href="http://wangzhaohui.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 21 Nov 2016 22:19:59 +0800</pubDate>
-    <lastBuildDate>Mon, 21 Nov 2016 22:19:59 +0800</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 21:56:47 +0800</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 21:56:47 +0800</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
-    
-      <item>
-        <title>更新站点</title>
-        <description>&lt;p&gt;【2016-08-09】
-距离上次更新快接近一年了，这次在工作闲暇之余把站点的界面做了部分更新，在站点库里（cdn）添加了&lt;a href=&quot;http://materializecss.com/&quot;&gt;Materializecss&lt;/a&gt;和&lt;a href=&quot;https://jquery.com&quot;&gt;jQuery&lt;/a&gt;，以后还会陆续增加其他常用库和插件，主要是要用在子站点。对于主站主要使用到jQuery和Wave(过后增加)。
-现在子站点准备陆续开放，为了方便的达人们的阅读和交流，开始使用中文简体来写post。对于以后主站点的更新，全部记录在本post里，以头部的日期标记。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 09 Aug 2016 05:20:00 +0800</pubDate>
-        <link>http://wangzhaohui.github.io/jekyll/update/2016/08/09/update-site.html</link>
-        <guid isPermaLink="true">http://wangzhaohui.github.io/jekyll/update/2016/08/09/update-site.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
     
       <item>
         <title>Lazyload Demo</title>
@@ -44,7 +27,7 @@
     
       <item>
         <title>My second post</title>
-        <description>&lt;p&gt;Now this is my second post far from my first one. Nothing to say, but till now I know that the jeklly has its new version. I update it to the latest version on my Macbook. I got a problem when I ran command of ‘jekyll server –watch’, no server was started. I searched the problem on google and I find it that in the latest version of Jekyll, &lt;code&gt;&#39;jekyll server&#39;&lt;/code&gt; will be started with the ‘watch’ mode defaultly. And if no server is started, we may try to use a option &lt;code&gt;&#39;--force_polling&#39;&lt;/code&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;Now this is my second post far from my first one. Nothing to say, but till now I know that the jeklly has its new version. I update it to the latest version on my Macbook. I got a problem when I ran command of ‘jekyll server –watch’, no server was started. I searched the problem on google and I find it that in the latest version of Jekyll, &lt;code&gt;&#39;jekyll server&#39;&lt;/code&gt; will be started with the ‘watch’ mode defaultly. And if no server is started, we may try to use an option &lt;code&gt;&#39;--force_polling&#39;&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 21 Sep 2015 05:12:05 +0800</pubDate>
         <link>http://wangzhaohui.github.io/jekyll/update/2015/09/21/my-second-post.html</link>
