@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>学习第一个插件开发</title>
+</head>
+<body>
+	<div class="wrap"></div>
+	<div class="wrap"></div>
+	<div class="wrap"></div>
+	<script type="text/javascript" src="dome.js"></script>
+	<script type="text/javascript">
+		var link = dome.create('a', {text:"第一个节点",href:"http://www.google.com/", target: "_blank"});
+		
+		link.appendTo(dome.get('.wrap'));
+	</script>
+</body>
+</html>
