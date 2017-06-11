@@ -15,6 +15,13 @@ body > div:hover {
 	cursor: pointer;
 }
 
-.stuff-box {
+#container > li {
 	display: inline-block;
+	min-width: 300px;
+	min-height: 300px;
+	overflow: visible;
+}
+
+#container > li > * {
+	position: relative;
 }

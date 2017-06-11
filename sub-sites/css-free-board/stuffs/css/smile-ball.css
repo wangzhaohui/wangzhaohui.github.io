@@ -1,9 +1,9 @@
-.smile-face {
+#smile-face {
 	position: relative;
 	margin-left: 50px;
 }
 
-.smile-face .head {
+#smile-face .head {
 	position: absolute;
 	width: 100px;
 	height: 100px;
@@ -13,7 +13,7 @@
 	z-index: 10;
 }
 
-.smile-face:hover .head {
+#smile-face:hover .head {
 	animation: jump 1s ease-in-out infinite;
 }
 @keyframes jump {
@@ -28,7 +28,7 @@
 	100% {bottom: 0px; height: 100px;}
 }
 
-.smile-face .shadow {
+#smile-face .shadow {
 	position: absolute;
 	width: 100px;
 	height: 10px;
@@ -37,7 +37,7 @@
 	border-radius: 50%;
 }
 
-.smile-face:hover .shadow {
+#smile-face:hover .shadow {
 	animation: scale 1s ease-in-out infinite;
 }
 @keyframes scale {

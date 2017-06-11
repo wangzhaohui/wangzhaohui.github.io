@@ -1,45 +1,44 @@
-.iqiyi-logo {
-	position: relative;
+#iqiyi-logo {
 }
 
-.iqiyi-logo .outline {
+#iqiyi-logo .outline {
 	width: 110px;
 	height: 85px;
 	border: 10px solid #699f00;
 	border-radius: 50% / 10%;
 	float: left;
 }
-.iqiyi-logo .outline {
+#iqiyi-logo .outline {
 	position: relative;
 }
 
-.iqiyi-logo .outline .letter-left-i {
+#iqiyi-logo .outline .letter-left-i {
 	position: absolute;
 	left: -10px;
 	top: 10px;
 }
-.iqiyi-logo .outline .mask-line {
+#iqiyi-logo .outline .mask-line {
 	width: 10px;
 	height: 5px;
 	background-color: #fff;
 	position: relative;
 }
-.iqiyi-logo .outline .letter-left-i .first.mask-line{
+#iqiyi-logo .outline .letter-left-i .first.mask-line{
 	top: 0;
 }
-.iqiyi-logo .outline .letter-left-i .second.mask-line{
+#iqiyi-logo .outline .letter-left-i .second.mask-line{
 	top: 10px;
 }
-.iqiyi-logo .outline .letter-left-i .third.mask-line{
+#iqiyi-logo .outline .letter-left-i .third.mask-line{
 	top: 50px;
 }
 
-.iqiyi-logo .outline .letter-q {
+#iqiyi-logo .outline .letter-q {
 	position: absolute;
 	left: 12px;
 	top: 13px;
 }
-.iqiyi-logo .outline .letter-q .circle {
+#iqiyi-logo .outline .letter-q .circle {
 	border-width: 5px 10px;
 	border-style: solid;
 	border-color: #699f00;
@@ -47,7 +46,7 @@
 	width: 8px;
 	border-radius: 50% / 15%;
 }
-.iqiyi-logo .outline .letter-q .tail {
+#iqiyi-logo .outline .letter-q .tail {
 	width: 10px;
 	height: 5px;
 	background-color: #699f00;
@@ -57,7 +56,7 @@
 	transform: rotate(20deg);
 }
 
-.iqiyi-logo .outline .letter-middle-i {
+#iqiyi-logo .outline .letter-middle-i {
 	position: absolute;
 	left: 53px;
 	top: 15px;
@@ -66,44 +65,44 @@
 	background-color: #699f00;
 }
 
-.iqiyi-logo .outline .letter-y {
+#iqiyi-logo .outline .letter-y {
 	position: absolute;
 	left: 78px;
 	top: 15px;
 }
-.iqiyi-logo .outline .letter-y .line {
+#iqiyi-logo .outline .letter-y .line {
 	position: absolute;
 	width: 10px;
 	height: 30px;
 	background-color: #699f00;
 }
-.iqiyi-logo .outline .letter-y .left-line {
+#iqiyi-logo .outline .letter-y .left-line {
 	left: 0px;
 	transform: skewX(20deg);
 }
-.iqiyi-logo .outline .letter-y .right-line {
+#iqiyi-logo .outline .letter-y .right-line {
 	left: 10px;
 	transform: skewX(-20deg);
 }
-.iqiyi-logo .outline .letter-y .middle-line {
+#iqiyi-logo .outline .letter-y .middle-line {
 	top: 25px;
 	left: 5px;
 }
 
-.iqiyi-logo .outline .letter-right-i {
+#iqiyi-logo .outline .letter-right-i {
 	position: absolute;
 	right: -10px;
 	top: 10px;
 }
-.iqiyi-logo .outline .letter-right-i .first.mask-line {
+#iqiyi-logo .outline .letter-right-i .first.mask-line {
 	top: 0;
 }
-.iqiyi-logo .outline .letter-right-i .second.mask-line {
+#iqiyi-logo .outline .letter-right-i .second.mask-line {
 	top: 54px;
 }
 
 /* 爱奇艺 */
-.iqiyi-logo .name {
+#iqiyi-logo .name {
 	color: #699f00;
 	font-size: 50px;
 	font-family: 'microsoft yahei';
@@ -112,10 +111,10 @@
 	left: 20px;
 	top: 25px;
 }
-.iqiyi-logo .name .text {
+#iqiyi-logo .name .text {
 	margin: -5px;
 }
-.iqiyi-logo:hover .name .text {
+#iqiyi-logo:hover .name .text {
 	opacity: 0;
 	animation: showtext 0.5s linear forwards;
 	cursor: pointer;
@@ -124,12 +123,12 @@
 	from {opacity: 0; font-size: 0%;}
 	to   {opacity: 1; font-size: 100%;}
 }
-.iqiyi-logo:hover .name .text-1 {
+#iqiyi-logo:hover .name .text-1 {
 	animation-delay: 0s;
 }
-.iqiyi-logo:hover .name .text-2 {
+#iqiyi-logo:hover .name .text-2 {
 	animation-delay: 0.5s;
 }
-.iqiyi-logo:hover .name .text-3 {
+#iqiyi-logo:hover .name .text-3 {
 	animation-delay: 1s;
 }
