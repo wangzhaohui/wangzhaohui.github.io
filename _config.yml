@@ -1,16 +1,38 @@
 # Site settings
-title: Glory Wong Zhaohui
-email: wangzhaohui1001@163.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://wangzhaohui.github.io" # the base hostname & protocol for your site
+title: "Glory Wong"
+email: glorywong1001@gmail.com
+description: "This is my personal blog for tech & life."
+baseurl: ""
+url: "http://wangzhaohui.github.io/"
+title_description: "I'm a proactive and creative front-end developer. I keep a close eye on front-end development and web standards."
+title_image: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAdWAAAAJGFhMDkzNTQ4LTliMDEtNDM4Zi1hYTQzLWFkZGRhOTE3MTUyMg.jpg"
+google_analytics: "UA-20365477-4"
+disqus_account: cartenoire
+github_repository: https://github.com/wangzhaohui
+addthis_id: ra-513c6fa83da6ec67
+post_limit: 5
+
+# Social usernames/URLs
 twitter_username: glorywong1001
-github_username:  wangzhaohui
+github_username: wangzhaohui
+instagram_username: glorywong1001
+reddit_username: 
+linkedin_link: https://www.linkedin.com/in/%E6%98%AD%E8%BE%89-%E7%8E%8B-585613103/
+google_plus_link: https://plus.google.com/u/0/115226243672244543603
+stackoverflow_link: https://stackoverflow.com/users/5580066/%E7%8E%8B%E6%98%AD%E8%BE%89
+xing_link:
+facebook_link: https://www.facebook.com/glorywongzhaohui
+
+# Footer
+footer_left: "Made with <i class=\"fa fa-heart\"></i> by <a href=\"https://twitter.com/glorywong1001\">Glory Wong Zhaohui</a>"
+footer_right: "&lt;/&gt; on <a href=\"https://github.com/wangzhaohui\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
 
 # Build settings
 markdown: kramdown
 
-theme: jekyll-theme-tactile
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+permalink: pretty
+exclude: [vendor]
