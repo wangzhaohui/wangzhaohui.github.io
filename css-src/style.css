@@ -1,4 +1,7 @@
 @import url(reset.css);
+body {
+  font-family: 'Open Sans',sans-serif; }
+
 a {
   text-decoration: none; }
 
@@ -8,18 +11,23 @@ a {
   min-height: 100%;
   display: table;
   width: 100%;
-  color: #444; }
+  color: #444;
+  position: relative; }
   .header .header-info {
-    margin: 0 auto;
-    width: 80%; }
+    position: relative;
+    left: 10%;
+    width: 40%;
+    margin-top: 20px; }
     .header .header-info > * {
       margin-bottom: 30px; }
     .header .header-info .header-name {
-      font-size: 4rem; }
+      font-size: 2em; }
     .header .header-info .header-intro {
-      font-size: 2rem; }
+      font-size: 1em;
+      line-height: 1.4em; }
     .header .header-info .header-social {
-      font-size: 1rem; }
+      font-size: 1em;
+      line-height: 20px; }
       .header .header-info .header-social li {
         margin: 10px 0; }
         .header .header-info .header-social li a {
@@ -29,6 +37,20 @@ a {
           color: white; }
           .header .header-info .header-social li a:hover {
             background-color: #7b1fa2; }
+    @media (min-width: 40em) {
+      .header .header-info .header-name {
+        font-size: 3.9em; }
+      .header .header-info .header-intro {
+        font-size: 1.3em; } }
+  .header .header-avatar {
+    max-width: 100%;
+    width: 35%;
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+  @media (min-width: 54em) {
+    .header .header-avatar {
+      width: 300px; } }
 
 .article {
   background-color: #444;
