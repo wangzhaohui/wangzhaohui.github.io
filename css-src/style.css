@@ -51,6 +51,10 @@ a {
   @media (min-width: 54em) {
     .header .header-avatar {
       width: 300px; } }
+  @media (max-width: 54em) {
+    .header .header-info {
+      left: 5%;
+      width: 90%; } }
 
 .article {
   background-color: #444;

@@ -79,6 +79,12 @@ $dark-bg-clr: #444;
 		    width: 300px;
 		}
 	}
+	@media (max-width: 54em) {
+		.header-info {
+			left: 5%;
+			width: 90%;
+		}
+	}
 }
 
 .article {
