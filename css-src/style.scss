@@ -20,7 +20,9 @@ $light-bg-clr: #fafafa;
 $dark-bg-clr: #444;
 
 .header {
-    border-bottom: 5px solid $black;
+    border-bottom: 5px solid transparent;
+    border-image: linear-gradient(to right, #d62d20, #ffa700 33%, #008744 66%, #0057e7);
+    border-image-slice: 1;
     background-color: $light-bg-clr;
     min-height: 100%;
     display: table;
@@ -67,18 +69,6 @@ $dark-bg-clr: #444;
 	    	}
     	}
     }
-	.header-avatar {
-		max-width: 100%;
-		width: 35%;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-	}
-	@media (min-width: 54em) {
-		.header-avatar {
-		    width: 300px;
-		}
-	}
 	@media (max-width: 54em) {
 		.header-info {
 			left: 5%;

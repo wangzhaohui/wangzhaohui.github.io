@@ -6,7 +6,9 @@ a {
   text-decoration: none; }
 
 .header {
-  border-bottom: 5px solid #333;
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(to right, #d62d20, #ffa700 33%, #008744 66%, #0057e7);
+  border-image-slice: 1;
   background-color: #fafafa;
   min-height: 100%;
   display: table;
@@ -42,15 +44,6 @@ a {
         font-size: 3.9em; }
       .header .header-info .header-intro {
         font-size: 1.3em; } }
-  .header .header-avatar {
-    max-width: 100%;
-    width: 35%;
-    position: absolute;
-    bottom: 0;
-    right: 0; }
-  @media (min-width: 54em) {
-    .header .header-avatar {
-      width: 300px; } }
   @media (max-width: 54em) {
     .header .header-info {
       left: 5%;
