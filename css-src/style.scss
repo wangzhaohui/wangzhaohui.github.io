@@ -21,6 +21,7 @@ $dark-bg-clr: #444;
 
 .header {
     border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
     border-image: linear-gradient(to right, #d62d20, #ffa700 33%, #008744 66%, #0057e7);
     border-image-slice: 1;
     background-color: $light-bg-clr;
