@@ -52,9 +52,32 @@ a {
 
 .article {
   background-color: #444;
-  padding: 50px 0;
-  width: 90%;
-  margin: 0 auto; }
+  padding: 20px; }
+  .article .sites {
+    display: flex; }
+    .article .sites .item {
+      flex-basis: 150px;
+      margin: 10px;
+      height: 200px; }
+      .article .sites .item > a {
+        height: 100%;
+        display: block; }
+        .article .sites .item > a .card {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          border-radius: 5px;
+          background-color: #fafafa;
+          overflow: hidden; }
+          .article .sites .item > a .card .content {
+            flex-basis: 80%; }
+          .article .sites .item > a .card .foot {
+            flex-basis: 20%;
+            background-color: limegreen;
+            color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
 
 .footer {
   background-color: #333;

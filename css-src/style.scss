@@ -80,9 +80,39 @@ $dark-bg-clr: #444;
 
 .article {
 	background-color: $dark-bg-clr;
-	padding: 50px 0;
-	width: 90%;
-	margin: 0 auto;
+	padding: 20px;
+
+  .sites {
+		display: flex;
+		.item {
+			flex-basis: 150px;
+			margin: 10px;
+			height: 200px;
+			& > a {
+				height: 100%;
+				display: block;
+				.card {
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					border-radius: 5px;
+					background-color: $light-bg-clr;
+					overflow: hidden;
+					.content {
+						flex-basis: 80%;
+					}
+					.foot {
+						flex-basis: 20%;
+						background-color: limegreen;
+						color: $light-bg-clr;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+				}
+			}
+		}
+	}
 }
 
 .footer {

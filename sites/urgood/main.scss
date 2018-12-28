@@ -17,12 +17,16 @@ header {
   left: 0;
   right: 0;
   .catalog {
-    display: flex;
     height: 100%;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     .item {
-      width: 100%;
+      flex-basis: 33.3333%;
+      transition: transform 0.5s;
+      &:hover {
+        transform: scale(1.2, 1.2);
+      }
       & > a {
         padding: 50px 100px;
         display: block;
@@ -30,7 +34,7 @@ header {
         color: white;
         font-size: 5em;
         text-decoration: none;
-        transition: transform 0.5s;
+        white-space: nowrap;
         &.a {
           background-color: #f50057;
         }
@@ -39,9 +43,6 @@ header {
         }
         &.c {
           background-color: #008ff5;
-        }
-        &:hover {
-          transform: scale(1.2, 1.2);
         }
       }
     }

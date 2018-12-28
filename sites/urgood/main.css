@@ -15,12 +15,15 @@ header {
   left: 0;
   right: 0; }
   .catalog-container .catalog {
-    display: flex;
     height: 100%;
+    display: flex;
     justify-content: space-between;
     align-items: center; }
     .catalog-container .catalog .item {
-      width: 100%; }
+      flex-basis: 33.3333%;
+      transition: transform 0.5s; }
+      .catalog-container .catalog .item:hover {
+        transform: scale(1.2, 1.2); }
       .catalog-container .catalog .item > a {
         padding: 50px 100px;
         display: block;
@@ -28,14 +31,12 @@ header {
         color: white;
         font-size: 5em;
         text-decoration: none;
-        transition: transform 0.5s; }
+        white-space: nowrap; }
         .catalog-container .catalog .item > a.a {
           background-color: #f50057; }
         .catalog-container .catalog .item > a.b {
           background-color: #02ce1b; }
         .catalog-container .catalog .item > a.c {
           background-color: #008ff5; }
-        .catalog-container .catalog .item > a:hover {
-          transform: scale(1.2, 1.2); }
 
 /*# sourceMappingURL=main.css.map */
