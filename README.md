@@ -1,2 +1,2 @@
-# https://izhaohui.wang
+# http://izhaohui.wang
 Personal mini website
