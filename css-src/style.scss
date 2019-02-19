@@ -29,7 +29,13 @@ $dark-bg-clr: #444;
     display: table;
     width: 100%;
     color: $char-clr;
-    position: relative;
+		position: relative;
+		
+		.header-bg {
+			position: absolute;
+			opacity: 0.3;
+		}
+
     .header-info {
     	position: relative;
     	left: 10%;
@@ -81,6 +87,7 @@ $dark-bg-clr: #444;
 .article {
 	background-color: $dark-bg-clr;
 	padding: 20px;
+	box-shadow: inset 0 0px 5px 2px rgba(0, 0, 0, 0.4);
 
   .sites {
 		display: flex;
