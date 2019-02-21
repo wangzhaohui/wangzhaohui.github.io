@@ -18,7 +18,7 @@ a {
   position: relative; }
   .header .header-bg {
     position: absolute;
-    opacity: 0.3; }
+    opacity: 0.1; }
   .header .header-info {
     position: relative;
     left: 10%;
