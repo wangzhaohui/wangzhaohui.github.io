@@ -1,2 +1,2 @@
-# https://izhaohui.wang
+# https://zhaozhao.today/
 Personal mini website
