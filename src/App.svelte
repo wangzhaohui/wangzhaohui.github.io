@@ -1,5 +1,6 @@
 <script>
 	import Social from './components/Social.svelte'
+	import Projects from './components/Projects.svelte'
 
 	let pad = function (num) {
 		return num < 10 ? `0${num}` : num;
@@ -36,7 +37,9 @@
 			<!-- <img class="profile__img" src="https://i.ibb.co/WFtDqbN/profile.png" alt="My profile image"> -->
 		</div>
 	</header>
-	<article></article>
+	<article>
+		<Projects/>
+	</article>
 	<footer>Zhaozhao today @ {time}</footer>
 </main>
 

@@ -14,7 +14,7 @@
     label: 'Facebook',
     url: 'https://www.facebook.com/glorywongzhaohui'
   }, {
-    label: 'twitter',
+    label: 'Twitter',
     url: 'https://twitter.com/glorywong1001'
   }, {
     label: 'Instagram',
