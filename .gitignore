@@ -4,3 +4,7 @@ sites/urgood/\.sass-cache/
 *.map
 
 css-src/\.sass-cache/
+
+node_modules/*
+
+package-lock.json
