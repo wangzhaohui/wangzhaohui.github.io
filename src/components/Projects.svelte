@@ -2,7 +2,7 @@
   const projects = [{
     label: '2019-nCoV in Xiaogan',
     url: '/2019ncov-xiaogan/',
-    image: ''
+    image: 'https://i.ibb.co/F4xxhSL/xiaogan-logo-64-64.png'
   }];
 </script>
 
@@ -13,7 +13,7 @@
       <a href={url} target="_blank">
         <div class="project-box">
           <div class="project-box__header">
-            <img src={image}>
+            <img alt="project image" src={image}>
           </div>
           <div class="project-box__title">{label}</div>
         </div>
@@ -46,6 +46,10 @@
             &__header {
               background: $boxColor;
               flex-grow: 1;
+              img {
+                width: 100%;
+                filter: hue-rotate(282deg);
+              }
             }
             &__title {
               padding: 10px;
