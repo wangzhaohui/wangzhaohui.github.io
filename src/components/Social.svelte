@@ -38,26 +38,19 @@
   </ul>
 </div>
 
-<style lang="scss">
-  .social {
-    margin: 20px 0;
+<style lang="sass">
+  .social
+    &-list
+      &__item
+        margin: 1.5em 0
+        a
+          background-color: #9C27B0
+          border-radius: 0.7em
+          padding: 0.3em 0.7em
+          color: white
+          cursor: pointer
 
-    .social-list {
-      &__item {
-        margin: 15px 0;
-        a {
-          background-color: #9C27B0;
-          border-radius: 10px;
-          padding: 2px 10px;
-          color: white;
-          cursor: pointer;
-
-          &:hover {
-            background-color: #7b1fa2;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
+          &:hover 
+            background-color: #7b1fa2
+            text-decoration: none
 </style>
