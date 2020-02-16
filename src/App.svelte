@@ -97,7 +97,7 @@
 				cursor: pointer
 
 			&:hover
-				border-radius: 50%
+				border-radius: 2em
 
 			&__social
 				.label
