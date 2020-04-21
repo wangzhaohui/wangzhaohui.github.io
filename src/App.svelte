@@ -42,104 +42,98 @@
 	}];
 </script>
 
-<div class="body">
-	<header>
-		Zhao Zhao Today @2020
-	</header>
-	<main>
-		<div class="profile">
-			<div class="info">
-				Web developer, enjoy cooking hubei-style food, I'm a languages enthusiast.
-			</div>
-			<div class="socials-box">
-				<ul class="socials">
-				{#each socials as { label, url }}
-				<li class="socials__item">
-					<a href={url} target="_blank">
-						{label}
-					</a>
-				</li>
-				{/each}
-				</ul>
+<main>
+	<div class="show">
+		<div class="photos-gallery">
+			<div class="profile-box">
+				<img src="https://i.ibb.co/b3jrWFG/2c6afa4c998140482851ec2bc6c94f3e.jpg" alt="profile photo">
+				<div class="profile">
+					<div class="title">Zhaozhao@Today</div>
+					<div class="desc">Web developer, Hubei-style food cook, languages enthusiast, C-pop and Cantonpop lover.</div>
+				</div>
 			</div>
 		</div>
-		<div class="art"></div>
-	</main>
-</div>
+		<div class="music-player-box">
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=322 height=52
+				src="//music.163.com/outchain/player?type=2&id=112654&auto=0&height=32" title="player"></iframe>
+		</div>
+		<div class="socials-box">
+			<ul class="socials-list">
+				{#each socials as { label, url }}
+				<li class="socials-list__item"><a href={url} target="_blank">{ label }</a></li>
+				{/each}
+			</ul>
+		</div>
+	</div>
+	
+</main>
 
 <style lang="scss">
 	* {
 		box-sizing: border-box;
 	}
 
-	.body {
-		width: 100%;
-		height: 100%;
+	.photos-gallery {
 		display: flex;
-		flex-direction: column;
+		justify-content: center;
 
-		header {
-			height: 2em;
-			border-bottom: 5px solid;
-			border-image: linear-gradient(to right, red ,yellow, green, blue) 5;
+		.profile-box {
+			border-radius: 5px;
+			overflow: hidden;
+			background-color: white;
 			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-family: 'Pacifico';
-		}
+			width: 30em;
 
-		main {
-			display: flex;
-			flex-grow: 1;
-			.profile, .art {
-				padding: 20px;
-			}
 			.profile {
-				width: 50%;
-				background: black;
 				display: flex;
 				flex-direction: column;
-
-				.info {
-					display: flex;
-					margin-bottom: 10px;
-					justify-content: flex-end;
+				justify-content: center;
+				padding: 10px;
+				.title {
+					font-family: 'Pacifico';
+					line-height: 3em;
 				}
-
-				.socials-box {
-					display: flex;
-					justify-content: flex-end;
-					align-items: center;
-					ul li {
-						text-align: right;
-						&:not(:last-child) {
-							margin-bottom: 10px;
-						}
-						a {
-							color: #eee;
-						}
-					}
+				.desc {
+					line-height: 1.3em;
 				}
 			}
-			.art {
-				flex-grow: 1;
-				background: linear-gradient(to right, #303F9F, #4527A0);
+		}
+	}
+
+	.music-player-box {
+		display: flex;
+		justify-content: center;
+	}
+
+	.socials-list {
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+		box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+		border-radius: 2px;
+		background-color: white;
+		margin: 0 10px;
+		&__item {
+			display: flex;
+			a {
+				padding: 6px 10px;
+				color: #666;
+				text-decoration: none;
+				transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+				&:hover {
+					transform: scale(1.1);
+				}
 			}
 		}
 	}
 
 	@media (max-width: 500px) {
-		.body {
-			main {
+		.photos-gallery {
+			.profile-box {
 				flex-direction: column;
-				.profile {
-					width: 100%;
-					.socials-box {
-						justify-content: flex-start;
-						ul li {
-							text-align: left;
-						}
-					}
+				width: 15em;
+				.title {
+					text-align: center;
 				}
 			}
 		}
