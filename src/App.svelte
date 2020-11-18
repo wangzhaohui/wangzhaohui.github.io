@@ -7,30 +7,43 @@
 		return num < 10 ? `0${num}` : num;
 	}
 
+	const profile = {
+		photo: 'https://i.ibb.co/b3jrWFG/2c6afa4c998140482851ec2bc6c94f3e.jpg'
+	};
+
 	const socials = [{
+		id: 'wechat',
 		label: 'Wechat'
 	}, {
+		id: 'weibo',
 		label: 'Weibo',
 		url: 'https://weibo.com/1768830500/profile?topnav=1&wvr=6&is_all=1'
 	}, {
+		id: 'neteasemusic',
 		label: 'Netease Music',
 		url: 'https://music.163.com/#/user/home?id=261618415'
 	}, {
+		id: 'codepen',
 		label: 'Code Pen',
 		url: 'https://codepen.io/glorywong'
 	}, {
+		id: 'facebook',
 		label: 'Facebook',
 		url: 'https://www.facebook.com/glorywongzhaohui'
 	}, {
+		id: 'twitter',
 		label: 'Twitter',
 		url: 'https://twitter.com/glorywong1001'
 	}, {
+		id: 'instagram',
 		label: 'Instagram',
 		url: 'https://www.instagram.com/glorywong1001/'
 	}, {
+		id: 'github',
 		label: 'Github',
 		url: 'https://github.com/glorywong'
 	}, {
+		id: 'email',
 		label: 'Email',
 		url: 'mailto:glorywong1001@gmail.com'
 	}];
@@ -40,27 +53,36 @@
 		url: '/2019ncov-xiaogan/',
     image: 'https://i.ibb.co/F4xxhSL/xiaogan-logo-64-64.png'
 	}];
+
+	let playerEle, profileEle;
+	onMount(() => {
+		function exePlay() {
+			playerEle.play();
+		}
+
+		function exePause() {
+			playerEle.pause();
+		}
+
+		profileEle.addEventListener('mouseover', exePlay);
+		profileEle.addEventListener('mouseleave', exePause);
+		profileEle.addEventListener('touchstart', exePlay);
+		profileEle.addEventListener('touchend', exePause);
+	});
 </script>
 
 <main>
+	<audio bind:this="{playerEle}" loop="true" src="https://m10.music.126.net/20201118205752/7b8b4a6970fd3b1357fb5d7072f200f5/ymusic/obj/w5zDlMODwrDDiGjCn8Ky/3051003812/621e/a57d/8b7f/0be43e23177d9d8143868d42f4d6687f.mp3"></audio>
 	<div class="show">
-		<div class="photos-gallery">
-			<div class="profile-box">
-				<img src="https://i.ibb.co/b3jrWFG/2c6afa4c998140482851ec2bc6c94f3e.jpg" alt="profile photo">
-				<div class="profile">
-					<div class="title">Zhaozhao@Today</div>
-					<div class="desc">Web developer, Hubei-style food cook, languages enthusiast, C-pop and Cantonpop lover.</div>
-				</div>
+		<div class="profile" bind:this="{profileEle}">
+			<div class="photo">
+				<img src={profile.photo} alt="Avator">
 			</div>
-		</div>
-		<div class="music-player-box">
-			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=322 height=52
-				src="//music.163.com/outchain/player?type=2&id=112654&auto=0&height=32" title="player"></iframe>
 		</div>
 		<div class="socials-box">
 			<ul class="socials-list">
-				{#each socials as { label, url }}
-				<li class="socials-list__item"><a href={url} target="_blank">{ label }</a></li>
+				{#each socials as { id, label, url }}
+				<li class="socials-list__item"><a href={url} target="_blank" class={id}>{ label }</a></li>
 				{/each}
 			</ul>
 		</div>
@@ -73,67 +95,124 @@
 		box-sizing: border-box;
 	}
 
-	.photos-gallery {
+	.show {
 		display: flex;
-		justify-content: center;
-
-		.profile-box {
-			border-radius: 5px;
-			overflow: hidden;
-			background-color: white;
-			display: flex;
-			width: 30em;
-
-			.profile {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				padding: 10px;
-				.title {
-					font-family: 'Pacifico';
-					line-height: 3em;
-				}
-				.desc {
-					line-height: 1.3em;
-				}
-			}
-		}
-	}
-
-	.music-player-box {
-		display: flex;
-		justify-content: center;
-	}
-
-	.socials-list {
-		list-style-type: none;
-		display: flex;
-		flex-wrap: wrap;
-		box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
-		border-radius: 2px;
+		flex-direction: column;
+		height: 50vh;
+		max-height: 480px;
+		border-radius: 4px;
 		background-color: white;
-		margin: 0 10px;
-		&__item {
+		overflow: hidden;
+	}
+
+	.profile {
+		flex-grow: 1;
+		.photo {
+			height: 100%;
 			display: flex;
-			a {
-				padding: 6px 10px;
-				color: #666;
-				text-decoration: none;
-				transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-				&:hover {
-					transform: scale(1.1);
+			justify-content: center;
+			img {
+				height: inherit;
+			}
+		}
+	}
+
+	.socials-box {
+		.socials-list {
+			list-style-type: none;
+			display: flex;
+			flex-wrap: wrap;
+			/* box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2); */
+			&__item {
+				display: flex;
+				a {
+					padding: 6px 10px;
+					color: #666;
+					text-decoration: none;
+					transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+					transform-origin: center bottom;
+					&:hover {
+						transform: scaleY(2);
+					}
+
+					&.wechat {
+						color: #F7F7F7;
+						background: #62D276;
+					}
+
+					&.weibo {
+						color: #CD3235;
+						background: #F7F7F7;
+					}
+
+					&.neteasemusic {
+						color: #F7F7F7;
+						background: #D23E31;
+					}
+
+					&.codepen {
+						color: #F7F7F7;
+						background: #0A0A08;
+					}
+
+					&.facebook {
+						color: #F7F7F7;
+						background: #3275E4;
+					}
+
+					&.twitter {
+						color: #F7F7F7;
+						background: #489CE4;
+					}
+
+					&.instagram {
+						color: #F7F7F7;
+						background: #6F40A5;
+					}
+
+					&.github {
+						color: #F7F7F7;
+						background: #1B1E22;
+					}
+
+					&.email {
+						color: #F7F7F7;
+						background: gray;
+					}
 				}
 			}
 		}
 	}
 
-	@media (max-width: 500px) {
-		.photos-gallery {
-			.profile-box {
+	@media (max-width: 777px) {
+		.show {
+			height: auto;
+			width: 90vw;
+			flex-direction: row-reverse;
+			.photo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.socials-list {
 				flex-direction: column;
-				width: 15em;
-				.title {
-					text-align: center;
+				&__item {
+					a {
+						transform-origin: left center;
+						&:hover {
+							transform: scaleX(1.5);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 430px) {
+		.show {
+			.photo {
+				img {
+					height: max-content;
 				}
 			}
 		}
