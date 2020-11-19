@@ -19,7 +19,7 @@
   
   onMount(() => {
     mask.addEventListener('click', (evt) => {
-      if (!evt.target.classList.contains('dialog')) {
+      if (evt.target.classList.contains('mask')) {
         closeDialog();
       }
     });
