@@ -1,7 +1,7 @@
 <script>
-	import Social from './components/Social.svelte'
-	import Projects from './components/Projects.svelte'
-	import { onMount } from 'svelte'
+	import CDialog from './components/CDialog.svelte';
+	import { onMount } from 'svelte';
+	let wcqcVisible = false;
 
 	let pad = function (num) {
 		return num < 10 ? `0${num}` : num;
@@ -9,7 +9,10 @@
 
 	const socials = [{
 		id: 'wechat',
-		label: 'Wechat'
+		label: 'Wechat',
+		action: () => {
+			wcqcVisible = true;
+		}
 	}, {
 		id: 'weibo',
 		label: 'Weibo',
@@ -65,6 +68,8 @@
 		profileEle.addEventListener('touchstart', exePlay);
 		profileEle.addEventListener('touchend', exePause);
 	});
+
+	let fuck = 'shit';
 </script>
 
 <main>
@@ -76,12 +81,21 @@
 		</div>
 		<div class="socials-box">
 			<ul class="socials-list">
-				{#each socials as { id, label, url }}
-				<li class="socials-list__item"><a href={url} target="_blank" class={id}>{ label }</a></li>
+				{#each socials as { id, label, url, action }}
+				<li class="socials-list__item">
+					{#if url}
+						<a href={url} target="_blank" class={id}>{ label }</a>
+					{:else}
+						<a href="javascript:void(0)" on:click={action} class={id}>{label}</a>
+					{/if}
+				</li>
 				{/each}
 			</ul>
 		</div>
 	</div>
+	<CDialog bind:visible="{wcqcVisible}">
+		<img src="./public/wechatqrcode.jpg" alt="WeChat QR Code" width="100%" height="100%">
+	</CDialog>
 	
 </main>
 
