@@ -72,7 +72,7 @@
 </script>
 
 <main>
-	<audio bind:this="{playerEle}" loop="true" src="../GeiNiDeAi.mp3"></audio>
+	<audio bind:this="{playerEle}" loop="true" src="./public/GeiNiDeAi.mp3"></audio>
 	<div class="show">
 		<div class="profile" bind:this="{profileEle}">
 			<div class="photo">
