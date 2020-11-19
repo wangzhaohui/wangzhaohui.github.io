@@ -5,10 +5,6 @@
 
 	let pad = function (num) {
 		return num < 10 ? `0${num}` : num;
-	}
-
-	const profile = {
-		photo: 'https://i.ibb.co/b3jrWFG/2c6afa4c998140482851ec2bc6c94f3e.jpg'
 	};
 
 	const socials = [{
@@ -72,11 +68,10 @@
 </script>
 
 <main>
-	<audio bind:this="{playerEle}" loop="true" src="./public/GeiNiDeAi.mp3"></audio>
+	<audio bind:this="{playerEle}" loop="true" preload="auto" src="./public/GeiNiDeAi.mp3"></audio>
 	<div class="show">
 		<div class="profile" bind:this="{profileEle}">
 			<div class="photo">
-				<img src={profile.photo} alt="Avator">
 			</div>
 		</div>
 		<div class="socials-box">
@@ -108,12 +103,11 @@
 	.profile {
 		flex-grow: 1;
 		.photo {
+			width: 100%;
 			height: 100%;
-			display: flex;
-			justify-content: center;
-			img {
-				height: inherit;
-			}
+			background: url('https://i.ibb.co/b3jrWFG/2c6afa4c998140482851ec2bc6c94f3e.jpg') no-repeat;
+			background-size: contain;
+			background-position: center;
 		}
 	}
 
@@ -189,11 +183,7 @@
 			height: auto;
 			width: 90vw;
 			flex-direction: row-reverse;
-			.photo {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
+
 			.socials-list {
 				flex-direction: column;
 				&__item {
